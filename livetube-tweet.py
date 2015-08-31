@@ -15,13 +15,13 @@ r = urllib2.urlopen(jsonurl)
 root = json.loads(r.read())
 
 def livetweet(title,liveurl):
-    CK = 'XXXXXXXXXXXXXXXXXX'                             # Consumer Key
-    CS = 'XXXXXXXXXXXXXXXXXX'         # Consumer Secret
-    AT = 'XXXXXXXXXXXXXXXXXX' # Access Token
-    AS = 'XXXXXXXXXXXXXXXXXX'         # Accesss Token Secert
+    CK = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'                             # Consumer Key
+    CS = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'         # Consumer Secret
+    AT = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'  # Access Token
+    AS = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'         # Accesss Token Secert
 
-    bitlylogin = 'XXXXXXXXXXXXXXXXXX'
-    apikey = 'XXXXXXXXXXXXXXXXXX'
+    bitlylogin = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    apikey = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
     #bitly認証
     bitly_api = bitly.Api(login=bitlylogin, apikey=apikey)
@@ -34,7 +34,7 @@ def livetweet(title,liveurl):
     twitter = OAuth1Session(CK, CS, AT, AS)
 
     short_url = bitly_api.shorten(liveurl)
-    req = twitter.post(url_text, params = {"status": "【配信開始】" + title + "\n" + short_url})
+    req = twitter.post(url_text, params = {"status":  u"【配信開始】" + title + "\n" + short_url})
 
     # レスポンスを確認
     if req.status_code == 200:
@@ -50,7 +50,7 @@ def imgdownload(url):
     f.close()
 
 for entry in xrange(len(root)):
-    if root[entry]['author'] == u'げぇーく':
+    if root[entry]['author'] == u'配信者名':
         entrynum = entry
         entryid = root[entry]['id']
 
