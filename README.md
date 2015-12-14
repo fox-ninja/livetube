@@ -7,7 +7,7 @@ livetube-tweetを追加しました。
 2015/09/11<br>
 livetube-tweetを更新しました。
 
-AVENTクソアプリ用テキスト<br>
+ADVENTクソアプリ用テキスト<br>
 本体：livetube-tweet.py
 
 livetube（配信サイト）の配信情報が入ったjsonファイル（https://livetube.cc/index.live.json）を取得し、設定した名前とマッチングしたらTwitterにサムネ付きで配信告知する。<br>
